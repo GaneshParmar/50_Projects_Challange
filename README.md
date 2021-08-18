@@ -1,2 +1,5 @@
-<h4>This is my 50 days 50 project Challange which i want to complete</h4>
-https://github.com/GaneshParmar/50_Projects_Challange/
+<h2>This is my 50 days 50 project Challange which i want to complete</h2>
+
+|  SrNO  | Project                                                                                                                     | Live Demo                                                                         |
+| :-: | --------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
+| 1 | Blurry_Loader |Live Demo|
