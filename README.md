@@ -3,6 +3,7 @@
   <tr>
     <td>1</td>
     <td>Blurry_Loading</td>
+    <td><a href="https://ganeshparmar.github.io/50_Projects_Challange/Blurry_Loading">See Live</a></td>
   </tr>
   
   
