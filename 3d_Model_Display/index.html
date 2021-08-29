@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,53 +9,103 @@
     <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
 </head>
 <style>
-    *{
+    * {
         margin: 0;
         padding: 0;
     }
-    body{
+
+    body {
         height: 97vh;
     }
-    #model_container{
+
+    h4 {
+        font-size: 1.4rem;
+        position: absolute;
+        font-family: monospace;
+        right: 100px;
+        margin-top: 10px;
+        z-index: 1;
+    }
+
+    #on_off_btn {
+        box-sizing: content-box;
+        position: absolute;
+        right: 40px;
+        margin-top: 10px;
+        width: 45px;
+        height: 15px;
+        border: 2px solid rgb(80, 80, 82);
+        border-radius: 12px;
+        padding: 2px;
+        z-index: 1;
+    }
+
+    #on_off_btn>p {
+        position: absolute;
+        left: -3px;
+        top: 0px;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: rgb(83, 77, 77);
+        box-shadow: 0px 0px 10px rgb(121, 120, 122);
+        transition: all 0.4s ease;
+    }
+
+    #model_container {
         width: 100%;
         height: 100%;
-        background-color: aqua;
+        /* background-color: aqua; */
     }
-    #model{
+
+    #model {
         width: 100%;
         height: 100%;
     }
-    .btn_holder{
+    #hdr_bg{
+        display: none;
+    }
+
+    .btn_holder {
         position: relative;
         bottom: 20vh;
         display: flex;
         justify-content: center;
     }
-    button{
+
+    button {
         padding: 10px;
         width: 70px;
         border-radius: 4px;
         border: none;
-        background-color: rgba(164,74,255,1);
+        background-color: rgba(164, 74, 255, 1);
         color: white;
         cursor: pointer;
     }
-    #btn_2{
-        margin: 0 4vw;
-    } 
 
-    @media (min-width:900px){
-        button{
+    #btn_2 {
+        margin: 0 4vw;
+    }
+
+    @media (min-width:900px) {
+        button {
             width: 140px;
             padding: 15px;
         }
-        
+
     }
 </style>
-<body>
 
+<body>
+    <!-- Change Background -->
+    <h4 id="change_bg_title">Change Background</h4>
+    <div id="on_off_btn">
+        <p id="on_off" onclick="shift()"></p>
+    </div>
     <div id="model_container">
-        <model-viewer src="RobotExpressive.glb" alt="A 3D model of robot" ar ar-modes="webxr scene-viewer quick-look" environment-image="neutral" auto-rotate camera-controls id="model" animation-name="Wave" autoplay></model-viewer>
+        <model-viewer src="RobotExpressive.glb" alt="A 3D model of robot" ar ar-modes="webxr scene-viewer quick-look"
+            environment-image="neutral" auto-rotate camera-controls id="model" animation-name="Wave" autoplay>
+        </model-viewer>
         <div class="btn_holder">
             <button type="button" onclick="stop()">Stop</button>
             <button type="button" id="btn_2" onclick="run()">Run</button>
@@ -63,15 +114,31 @@
     </div>
 </body>
 <script>
-    model_selector=document.querySelector("#model");
+    model_selector = document.querySelector("#model");
     function stop() {
-        model_selector.animationName="none";
+        model_selector.animationName = "none";
     }
     function run() {
-        model_selector.animationName="Running";
+        model_selector.animationName = "Running";
     }
     function wave() {
-        model_selector.animationName="Wave";
+        model_selector.animationName = "Wave";
+    }
+    status="change";
+    function shift() {
+        if(status=="change"){
+            on_off.style.left="29px";
+            document.querySelector("#change_bg_title").style.color="white";
+            model_selector.setAttribute("skybox-image", "stadium.hdr");
+            status="not_change";
+        }
+        else{
+            on_off.style.left="-3px";
+            document.querySelector("#change_bg_title").style.color="black";
+            model_selector.removeAttribute("skybox-image", "stadium.hdr");
+            status="change";
+        }
     }
 </script>
+
 </html>
