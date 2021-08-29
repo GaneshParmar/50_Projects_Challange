@@ -3,3 +3,4 @@
 |  SrNO  | Project                                                                                                                     | Live Demo                                                                         |
 | :-: | --------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------- |
 | 1 | [Blurry_Loader](https://github.com/GaneshParmar/50_Projects_Challange/tree/main/Blurry_Loading) |[Live Demo](https://ganeshparmar.github.io/50_Projects_Challange/Blurry_Loading/)|
+| 2 | [Rgba_Color_Generator](https://github.com/GaneshParmar/50_Projects_Challange/tree/main/Rgba_Color) |[Live Demo](https://ganeshparmar.github.io/50_Projects_Challange/Rgba_Color/)|
